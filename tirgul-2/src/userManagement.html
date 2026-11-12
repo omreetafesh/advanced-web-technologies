@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management</title>
+  </head>
+  <body class="min-h-screen bg-gray-100 text-gray-800">
+    <nav id="navbar" class="bg-gray-800"></nav>
+
+    <div class="mx-auto mt-10 max-w-4xl rounded-xl bg-white p-6 shadow-md">
+      <h1 id="welcome" class="mb-6 text-2xl font-bold">Welcome</h1>
+      <h2 class="mb-3 text-lg font-semibold text-gray-700">Registered users</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-gray-200 text-gray-700">
+            <tr>
+              <th class="px-4 py-2">#</th>
+              <th class="px-4 py-2">Username</th>
+              <th class="px-4 py-2">Email</th>
+              <th class="px-4 py-2">Date of Birth</th>
+              <th class="px-4 py-2">Role</th>
+            </tr>
+          </thead>
+          <tbody id="usersTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="userManagement.js"></script>
+  </body>
+</html>

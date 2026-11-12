@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  // Files Tailwind scans for class names - only classes found here end up in dist/output.css
-  content: ["./*.html", "./js/**/*.js"],
+export default {
+  // Files Tailwind scans for class names - only classes found here are generated
+  content: ["./index.html", "./src/**/*.{html,js}"],
   theme: {
     extend: {},
   },

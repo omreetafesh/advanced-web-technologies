@@ -1,30 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
-  <link href="dist/output.css" rel="stylesheet" />
-</head>
-<body class="flex min-h-screen items-center justify-center bg-gray-100 p-4">
-  <div class="w-full max-w-sm rounded-xl bg-white p-8 text-center shadow-md">
-    <h1 id="homeTitle" class="mb-4 text-2xl font-bold text-gray-800">Home</h1>
-    <div id="guestLinks" class="flex justify-center gap-3">
-      <a href="login.html" class="rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700">Login</a>
-      <a href="register.html" class="rounded-lg border border-blue-600 px-4 py-2 font-semibold text-blue-600 hover:bg-blue-50">Register</a>
-    </div>
-    <button id="logoutBtn" class="hidden rounded-lg bg-red-500 px-4 py-2 font-semibold text-white hover:bg-red-600">Logout</button>
-  </div>
-  <script src="js/storage.js"></script>
-  <script>
-    const user = getLoggedInUser();
-    if (user) {
-      document.getElementById("homeTitle").textContent = `Hello ${user.username}`;
-      document.getElementById("guestLinks").classList.add("hidden");
-      const btn = document.getElementById("logoutBtn");
-      btn.classList.remove("hidden");
-      btn.addEventListener("click", logout);
-    }
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tirgul 2</title>
+  </head>
+  <body class="min-h-screen bg-gray-100 text-gray-800">
+    <nav id="navbar" class="bg-gray-800"></nav>
+
+    <main class="flex flex-col items-center justify-center gap-4 p-10 text-center">
+      <h1 id="homeTitle" class="text-3xl font-bold">Welcome to Tirgul 2</h1>
+      <a href="/src/login.html" id="loginLink" class="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white hover:bg-blue-700">Login</a>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module">
+      const user = JSON.parse(localStorage.getItem("loggedInUser"));
+      if (user) {
+        document.getElementById("homeTitle").textContent = `Hello ${user.username}`;
+        document.getElementById("loginLink").classList.add("hidden");
+      }
+    </script>
+  </body>
 </html>

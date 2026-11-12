@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+  </head>
+  <body class="min-h-screen bg-gray-100 text-gray-800">
+    <nav id="navbar" class="bg-gray-800"></nav>
+
+    <div class="flex justify-center p-4 pt-10">
+      <div class="w-full max-w-sm rounded-xl bg-white p-8 shadow-md">
+        <h1 class="mb-6 text-center text-2xl font-bold">Register</h1>
+        <form id="registerForm" action="/src/register.html" method="post" class="space-y-4">
+          <div>
+            <label for="userInput" class="mb-1 block text-sm font-medium">Username</label>
+            <input id="userInput" type="text" required class="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label for="mailInput" class="mb-1 block text-sm font-medium">Email</label>
+            <input id="mailInput" type="email" required class="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label for="passInput" class="mb-1 block text-sm font-medium">Password</label>
+            <input id="passInput" type="password" required class="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label for="confirmInput" class="mb-1 block text-sm font-medium">Confirm Password</label>
+            <input id="confirmInput" type="password" required class="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label for="dateInput" class="mb-1 block text-sm font-medium">Date of Birth</label>
+            <input id="dateInput" type="date" required class="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <button type="submit" class="w-full rounded-lg bg-blue-600 py-2 font-semibold text-white hover:bg-blue-700">Register</button>
+        </form>
+        <div id="registerMessage" class="mt-2 text-red-500 text-center text-sm"></div>
+        <p class="mt-4 text-center text-sm text-gray-600">Already have an account? <a href="/src/login.html" class="text-blue-600 hover:underline">Login</a></p>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="register.js"></script>
+  </body>
+</html>
