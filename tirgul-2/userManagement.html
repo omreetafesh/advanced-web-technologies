@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Management</title>
+  <link href="dist/output.css" rel="stylesheet" />
+</head>
+<body class="min-h-screen bg-gray-100 p-4">
+  <div class="mx-auto max-w-3xl rounded-xl bg-white p-6 shadow-md">
+    <div class="mb-6 flex items-center justify-between">
+      <h1 id="welcome" class="text-2xl font-bold text-gray-800">Welcome</h1>
+      <button id="logoutBtn" class="rounded-lg bg-red-500 px-4 py-2 text-sm font-semibold text-white hover:bg-red-600">Logout</button>
+    </div>
+    <h2 class="mb-3 text-lg font-semibold text-gray-700">Registered users</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-sm">
+        <thead class="bg-gray-200 text-gray-700">
+          <tr>
+            <th class="px-4 py-2">#</th>
+            <th class="px-4 py-2">Username</th>
+            <th class="px-4 py-2">Email</th>
+            <th class="px-4 py-2">Role</th>
+          </tr>
+        </thead>
+        <tbody id="usersTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="js/storage.js"></script>
+  <script src="js/userManagement.js"></script>
+</body>
+</html>

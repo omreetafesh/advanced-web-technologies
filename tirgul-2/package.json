@@ -1,0 +1,12 @@
+{
+  "name": "tailwind-project",
+  "version": "1.0.0",
+  "description": "Tailwind project - register / login with localStorage and user management",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}
