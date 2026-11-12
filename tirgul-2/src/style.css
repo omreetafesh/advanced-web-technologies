@@ -14,6 +14,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* The pages use a light design - keep form fields light even when the computer is in dark mode */
+body {
+  color-scheme: light;
+}
 #app {
   max-width: 1280px;
   margin: 0 auto;
