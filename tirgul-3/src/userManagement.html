@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management</title>
+  </head>
+  <body class="min-h-screen bg-gray-100 text-gray-800">
+    <nav id="navbar" class="bg-gray-800"></nav>
+
+    <main class="bg-gray-100 flex p-10 justify-center">
+      <div class="bg-white p-8 rounded shadow-md overflow-x-auto">
+        <h1 id="userName" class="text-xl font-bold mb-4"></h1>
+        <p class="mb-4 text-sm text-gray-500">Double-click a cell to edit it. Enter saves, Escape cancels.</p>
+        <table id="usersData" class="min-w-full bg-white shadow-md rounded-lg">
+          <thead class="bg-gray-200">
+            <tr></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+    <script src="users.js"></script>
+    <script src="userManagement.js"></script>
+  </body>
+</html>

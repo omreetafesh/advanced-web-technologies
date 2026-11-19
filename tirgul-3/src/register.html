@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <!-- External CAPTCHA - Google reCAPTCHA v2 -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body class="min-h-screen bg-gray-100 text-gray-800">
+    <nav id="navbar" class="bg-gray-800"></nav>
+
+    <div class="flex justify-center p-4 pt-10">
+      <div class="w-full max-w-sm rounded-xl bg-white p-8 shadow-md">
+        <h1 class="mb-6 text-center text-2xl font-bold">Register</h1>
+        <form id="registerForm" action="/src/register.html" method="post" class="space-y-4">
+          <div>
+            <label for="userInput" class="mb-1 block text-sm font-medium">Username</label>
+            <input id="userInput" type="text" required class="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label for="mailInput" class="mb-1 block text-sm font-medium">Email</label>
+            <input id="mailInput" type="email" required class="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label for="passInput" class="mb-1 block text-sm font-medium">Password</label>
+            <input id="passInput" type="password" required class="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label for="confirmInput" class="mb-1 block text-sm font-medium">Confirm Password</label>
+            <input id="confirmInput" type="password" required class="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label for="dateInput" class="mb-1 block text-sm font-medium">Date of Birth</label>
+            <input id="dateInput" type="date" required class="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          </div>
+
+          <div id="arithmetic-captcha-container" class="space-y-2">
+            <label for="arithmetic-answer" class="block text-sm font-medium text-gray-700"> Solve the CAPTCHA: </label>
+            <div class="flex items-center space-x-4">
+              <span id="arithmetic-challenge" class="text-lg font-semibold text-gray-800"></span>
+              <button type="button" id="refresh-arithmetic-captcha" title="Refresh CAPTCHA">
+                <img class="h-10" src="https://logosandtypes.com/wp-content/uploads/2024/01/recaptcha.svg" alt="CAPTCHA">
+              </button>
+            </div>
+            <input type="text" id="arithmetic-answer" name="arithmetic-answer" class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Enter the answer">
+            <p id="arithmetic-error" class="mt-1 text-sm text-red-500 hidden">Incorrect CAPTCHA answer.</p>
+            <p id="captcha-attempts-error" class="mt-1 text-sm text-red-500 hidden">Too many incorrect attempts. Please reload the page.</p>
+          </div>
+
+          <!-- External CAPTCHA. This is Google's public test key - replace it with your own key from https://www.google.com/recaptcha/admin -->
+          <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh1UMeK0BSfixMa1Q_qC"></div>
+          <p id="recaptcha-error" class="text-sm text-red-500 hidden">Please confirm you are not a robot.</p>
+
+          <button type="submit" class="w-full rounded-lg bg-blue-600 py-2 font-semibold text-white hover:bg-blue-700">Register</button>
+        </form>
+        <div id="registerMessage" class="mt-2 text-red-500 text-center text-sm"></div>
+        <p class="mt-4 text-center text-sm text-gray-600">Already have an account? <a href="/src/login.html" class="text-blue-600 hover:underline">Login</a></p>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+    <script src="users.js"></script>
+    <script src="captcha.js"></script>
+  </body>
+</html>
