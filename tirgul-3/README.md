@@ -33,6 +33,6 @@ Test users in `src/db.json`:
   After 3 wrong answers the form is locked.
 - **Exercise – multiply and divide:** the question uses `+`, `-`, `×` or `÷`. Division questions always
   have a whole-number answer.
-- **Exercise – external CAPTCHA:** Google reCAPTCHA v2 ("I'm not a robot") on the register page.
-  It uses Google's public test key; replace `data-sitekey` in `register.html` with your own key from
-  https://www.google.com/recaptcha/admin.
+- **Exercise – external CAPTCHA:** Cloudflare Turnstile on the register page – the form can only be
+  submitted after it confirms the user is human. It uses Cloudflare's public test key; replace
+  `data-sitekey` in `register.html` with your own free key from the Cloudflare dashboard (Turnstile).

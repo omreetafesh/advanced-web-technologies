@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
-    <!-- External CAPTCHA - Google reCAPTCHA v2 -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- External CAPTCHA - Cloudflare Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   </head>
   <body class="min-h-screen bg-gray-100 text-gray-800">
     <nav id="navbar" class="bg-gray-800"></nav>
@@ -48,8 +48,8 @@
             <p id="captcha-attempts-error" class="mt-1 text-sm text-red-500 hidden">Too many incorrect attempts. Please reload the page.</p>
           </div>
 
-          <!-- External CAPTCHA. This is Google's public test key - replace it with your own key from https://www.google.com/recaptcha/admin -->
-          <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh1UMeK0BSfixMa1Q_qC"></div>
+          <!-- External CAPTCHA. This is Cloudflare's public test key - replace it with your own key from https://dash.cloudflare.com/?to=/:account/turnstile -->
+          <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="light"></div>
           <p id="recaptcha-error" class="text-sm text-red-500 hidden">Please confirm you are not a robot.</p>
 
           <button type="submit" class="w-full rounded-lg bg-blue-600 py-2 font-semibold text-white hover:bg-blue-700">Register</button>

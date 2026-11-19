@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // external CAPTCHA - the user must tick "I'm not a robot"
-        if (typeof grecaptcha === 'undefined' || grecaptcha.getResponse() === '') {
+        // external CAPTCHA - Cloudflare Turnstile must confirm the user is human
+        if (typeof turnstile === 'undefined' || !turnstile.getResponse()) {
             recaptchaError.classList.remove('hidden');
             return;
         }
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             incorrectAttempts = 0; // reset the incorrect attempts
             refreshCaptcha(); // show a new question
-            grecaptcha.reset(); // reset the external CAPTCHA
+            turnstile.reset(); // reset the external CAPTCHA
         } else {
             incorrectAttempts++;
             arithmeticError.classList.remove('hidden');
